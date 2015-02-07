@@ -49,4 +49,54 @@ describe BehaviorValidator do
       end
     end
   end
+
+  describe 'validations' do
+    subject do
+      model_class.new(attr: 0)
+    end
+
+    let(:model_class) do
+      opts = options
+      Class.new(TestModel) do
+        validates :attr, behavior: opts
+      end
+    end
+
+    context 'when the object responds to option keys' do
+      context 'and returns the corresponding value' do
+        let(:options) do
+          { zero?: true }
+        end
+
+        it { should be_valid }
+      end
+
+      context 'and does not return the corresponding value' do
+        let(:options) do
+          { zero?: false }
+        end
+
+        it { should be_invalid }
+      end
+    end
+
+    context 'when the options have reserved keys' do
+      let(:options) do
+        {
+          zero?: true,
+
+          # Reserved by ActiveModel.
+          allow_nil: true,
+          allow_blank: true,
+          message: 'hello'
+          # on: :create
+        }
+      end
+
+      it 'does not affect to the result' do
+        expect(model_class.new(attr: 0)).to be_valid
+        expect(model_class.new(attr: 1)).to be_invalid
+      end
+    end
+  end
 end

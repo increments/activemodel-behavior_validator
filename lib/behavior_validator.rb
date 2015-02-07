@@ -13,4 +13,10 @@ class BehaviorValidator < ActiveModel::EachValidator
       [:allow_nil, :allow_blank, :message, :on]
     end
   end
+
+  def validate_each(record, attribute, value)
+    unless self.class.valid?(value, options)
+      record.errors.add(attribute, options[:message] || :invalid_behavior)
+    end
+  end
 end
