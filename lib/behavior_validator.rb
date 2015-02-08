@@ -3,7 +3,7 @@ class BehaviorValidator < ActiveModel::EachValidator
     def valid?(value, options = {})
       options = options.reject { |option| reserved_options.include?(option) }
       options.each_pair.all? do |method, expected_result|
-        value.respond_do?(method) && value.__send__(method) == expected_result
+        value.respond_to?(method) && value.__send__(method) == expected_result
       end
     end
 
