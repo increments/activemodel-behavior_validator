@@ -19,7 +19,25 @@ bundle install
 Then add the following to your model:
 
 ```rb
-validates :my_attribute, behavior: { active?: true }
+validates :my_attribute, behavior: { method_name => expected_result }
+```
+
+### Example
+
+The `Comment` must belong to a published public `Article`.
+
+```rb
+class Article < ActiveRecord::Base
+  attr_accessible :date, :private
+
+  def published?
+    date > Time.now
+  end
+end
+
+class Comment < ActiveRecord::Base
+  belongs_to :article, behavior: { private?: false, published?: true }
+end
 ```
 
 ## Validation outside a model
@@ -27,5 +45,5 @@ validates :my_attribute, behavior: { active?: true }
 If you need to validate a outside a model, you can do that:
 
 ```rb
-BehaviorValidator.valid?(object, { method_name: expected_result }
+BehaviorValidator.valid?(object, { method_name => expected_result }
 ```
