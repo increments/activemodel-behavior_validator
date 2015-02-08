@@ -88,7 +88,9 @@ describe BehaviorValidator do
           # Reserved by ActiveModel.
           allow_nil: true,
           allow_blank: true,
-          message: 'hello'
+          message: 'hello',
+          if: -> { true },
+          unless: -> { false }
           # on: :create
         }
       end

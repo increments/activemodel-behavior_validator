@@ -10,7 +10,7 @@ class BehaviorValidator < ActiveModel::EachValidator
     end
 
     def reserved_options
-      [:allow_nil, :allow_blank, :message, :on]
+      [:allow_nil, :allow_blank, :message, :on, :if, :unless]
     end
   end
 
