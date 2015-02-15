@@ -1,6 +1,6 @@
 # activemodel-behavior_validator
 
-[![Build Status](https://travis-ci.org/increments/activemodel-behavior_validator.svg?branch=master)](https://travis-ci.org/increments/activemodel-behavior_validator) [![Code Climate](https://codeclimate.com/github/increments/activemodel-behavior_validator/badges/gpa.svg)](https://codeclimate.com/github/increments/activemodel-behavior_validator) [![Coverage Status](https://coveralls.io/repos/increments/activemodel-behavior_validator/badge.svg)](https://coveralls.io/r/increments/activemodel-behavior_validator) [![Dependency Status](https://gemnasium.com/increments/activemodel-behavior_validator.svg)](https://gemnasium.com/increments/activemodel-behavior_validator)
+[![Build Status](https://travis-ci.org/yuku-t/activemodel-behavior_validator.svg?branch=master)](https://travis-ci.org/yuku-t/activemodel-behavior_validator) [![Code Climate](https://codeclimate.com/github/yuku-t/activemodel-behavior_validator/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/activemodel-behavior_validator) [![Coverage Status](https://coveralls.io/repos/yuku-t/activemodel-behavior_validator/badge.svg)](https://coveralls.io/r/yuku-t/activemodel-behavior_validator) [![Dependency Status](https://gemnasium.com/yuku-t/activemodel-behavior_validator.svg)](https://gemnasium.com/yuku-t/activemodel-behavior_validator)
 
 ## Usage
 

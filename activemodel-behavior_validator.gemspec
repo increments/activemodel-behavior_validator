@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors         = ['Yuku Takahashi']
   spec.email           = ['yuku@qiita.com']
   spec.summary         = 'A behavior validator for Rails 3 and 4.'
-  spec.homepage        = 'https://github.com/increments/activemodel-behavior_validator'
+  spec.homepage        = 'https://github.com/yuku-t/activemodel-behavior_validator'
   spec.license         = 'MIT'
 
   spec.files           = `git ls-files -z`.split("\x0")
