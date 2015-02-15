@@ -24,7 +24,7 @@ validates :my_attribute, behavior: { method_name => expected_result }
 
 ### Example
 
-The `Comment` must belong to a published public `Article`.
+`Comment` must belong to a published public `Article`.
 
 ```rb
 class Article < ActiveRecord::Base
@@ -36,7 +36,8 @@ class Article < ActiveRecord::Base
 end
 
 class Comment < ActiveRecord::Base
-  belongs_to :article, behavior: { private?: false, published?: true }
+  belongs_to :article
+  validates :article, behavior: { private?: false, published?: true }
 end
 ```
 
